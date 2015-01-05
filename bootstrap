@@ -7,3 +7,15 @@ echo "Linking vim and vimrc"
 [ -d $HOME/.vim ] && rm -r $HOME/.vim
 ln -s $DOTFILES_DIR/vimrc $HOME/.vimrc
 ln -s $DOTFILES_DIR/vim $HOME/.vim
+
+echo "Linking bins"
+[ ! -d $HOME/bin ] && mkdir $HOME/bin
+for bin in `find $DOTFILES_DIR/bin -type f -exec basename {} \;`
+do
+  [ -f $HOME/bin/$bin ] && rm $HOME/bin/$bin
+  ln -s $DOTFILES_DIR/bin/$bin $HOME/bin/$bin
+done
+
+echo "Linking tmux config"
+[ -f $HOME/.tmux.conf ] && rm $HOME/.tmux.conf
+ln -s $DOTFILES_DIR/tmux.conf $HOME/.tmux.conf

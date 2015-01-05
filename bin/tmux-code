@@ -1,0 +1,29 @@
+#!/bin/sh
+
+PROJECT_NAME=$1
+CODE_DIR=$HOME/code/$PROJECT_NAME
+
+if [ -z $PROJECT_NAME ]
+then
+  echo "No project specified"
+  exit 1
+fi
+
+# Check that a code directory exists for the project
+if [ ! -d $CODE_DIR ]
+then
+  echo "$1 is not a valid code repo"
+  exit 1
+fi
+
+# Check for an existing session to attach to
+tmux has-session -t $PROJECT_NAME 2>/dev/null
+if [ $? -eq 0 ]
+then
+  echo "Attaching to existing session for $PROJECT_NAME"
+  tmux attach-session -t $PROJECT_NAME
+  exit 0
+fi
+
+echo "Creating new session for $PROJECT_NAME"
+tmux new-session -s $PROJECT_NAME
