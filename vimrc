@@ -1,8 +1,21 @@
-" Setup Pathogen
-call pathogen#infect()
-call pathogen#helptags()
-
+set nocompatible
 set ai et nu sts=2 ts=2 sw=2 so=5
+
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-bundler'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'danro/rename.vim'
+Plugin 'markcornick/vim-bats'
+
+call vundle#end()
+
 filetype plugin indent on
 
 " Remap 0 in command mode to bring us to the first non-whitespace

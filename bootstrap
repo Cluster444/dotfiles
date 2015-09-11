@@ -8,6 +8,9 @@ echo "Linking vim and vimrc"
 ln -s $DOTFILES_DIR/vimrc $HOME/.vimrc
 ln -s $DOTFILES_DIR/vim $HOME/.vim
 
+git clone https://github.com/VundleVim/Vundle.vim $HOME/dotfiles/vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+
 echo "Linking bins"
 [ ! -d $HOME/bin ] && mkdir $HOME/bin
 for bin in `find $DOTFILES_DIR/bin -type f -exec basename {} \;`
