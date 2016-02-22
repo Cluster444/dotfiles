@@ -13,6 +13,8 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'danro/rename.vim'
 Plugin 'markcornick/vim-bats'
+Plugin 'pearofducks/ansible-vim'
+Plugin 'ekalinin/Dockerfile.vim'
 
 call vundle#end()
 
