@@ -1,5 +1,6 @@
 set nocompatible
 set ai et nu sts=2 ts=2 sw=2 so=5
+set background=dark
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
