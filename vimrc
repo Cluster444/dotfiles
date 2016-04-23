@@ -14,6 +14,8 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'danro/rename.vim'
 Plugin 'vim-scripts/bats.vim'
+Plugin 'pearofducks/ansible-vim'
+Plugin 'ekalinin/Dockerfile.vim'
 
 call vundle#end()
 
