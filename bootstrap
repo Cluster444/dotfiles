@@ -25,3 +25,65 @@ done
 echo "Linking tmux config"
 [ -f $HOME/.tmux.conf ] && rm $HOME/.tmux.conf
 ln -s $DOTFILES_DIR/tmux.conf $HOME/.tmux.conf
+
+echo "Installing base apps"
+
+apt-get update
+apt-get -y dist-upgrade
+
+apt-get install -y \
+  ack-grep \
+  adduser \
+  apt-transport-https \
+  automake \
+  bash-completion \
+  bc \
+  bridge-utils \
+  build-essentials \
+  bzip2 \
+  ca-certificates \
+  cgroupfs-mount \
+  coreutils \
+  curl \
+  dconf-utils
+  dnsutils \
+  file \
+  findutils \
+  gcc \
+  git \
+  gnupg \
+  grep \
+  gzip \
+  hostname \
+  indent \
+  iptables \
+  jq \
+  less \
+  libc6-dev \
+  libtldl-dev \
+  locales \
+  lsof \
+  make \
+  mount \
+  net-tools \
+  network-manager \
+  openvpn \
+  s3cmd \
+  scdaemon \
+  shellcheck \
+  ssh \
+  strace \
+  sudo \
+  tar \
+  tree \
+  tzdata \
+  unzip \
+  xclip \
+  xcompmgr \
+  xz-utils \
+  zip \
+  --no-install-recommends
+
+apt-get -y autoremove
+apt-get autoclean
+apt-get clean
