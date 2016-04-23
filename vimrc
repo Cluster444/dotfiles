@@ -1,5 +1,6 @@
 set nocompatible
 set ai et nu sts=2 ts=2 sw=2 so=5
+set bg=dark
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
@@ -12,7 +13,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'danro/rename.vim'
-Plugin 'markcornick/vim-bats'
+Plugin 'vim-scripts/bats.vim'
 
 call vundle#end()
 
