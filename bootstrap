@@ -28,12 +28,22 @@ echo "Linking tmux config"
 [ -f $HOME/.tmux.conf ] && rm $HOME/.tmux.conf
 ln -s $DOTFILES_DIR/tmux.conf $HOME/.tmux.conf
 
-echo "Installing base apps"
+echo "Linking dotfiles"
+files=(aliases bash_profile exports)
+for file in "${files[@]}"
+do
+  [ -f "$HOME/.$file" ] && rm "$HOME/.$file"
+  ln -s "$DOTFILES_DIR/$file" "$HOME/.$file"
+done
 
-apt-get update
-apt-get -y dist-upgrade
+echo "Updating APT Sources"
+sudo apt-get -qq update
 
-apt-get install -y \
+echo "System Upgrade"
+sudo apt-get -qq dist-upgrade
+
+echo "Installing Packages"
+sudo apt-get install -qq \
   ack-grep \
   adduser \
   apt-transport-https \
@@ -41,13 +51,12 @@ apt-get install -y \
   bash-completion \
   bc \
   bridge-utils \
-  build-essentials \
+  build-essential \
   bzip2 \
   ca-certificates \
-  cgroupfs-mount \
   coreutils \
   curl \
-  dconf-utils
+  dconf-tools \
   dnsutils \
   file \
   findutils \
@@ -62,7 +71,6 @@ apt-get install -y \
   jq \
   less \
   libc6-dev \
-  libtldl-dev \
   locales \
   lsof \
   make \
@@ -80,12 +88,14 @@ apt-get install -y \
   tree \
   tzdata \
   unzip \
+  vim \
   xclip \
   xcompmgr \
   xz-utils \
   zip \
   --no-install-recommends
 
-apt-get -y autoremove
-apt-get autoclean
-apt-get clean
+echo "Cleaning up APT"
+sudo apt-get -qq autoremove
+sudo apt-get -qq autoclean
+sudo apt-get -qq clean
