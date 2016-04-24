@@ -2,7 +2,7 @@
 
 export EDITOR=vim
 
-for file in ~/.{bash_prompt,aliases,functions,path,profile};
+for file in ~/.{aliases,exports,functions,path,profile};
 do
   [[ -r "$file" ]] && [[ -f "$file" ]] && source "$file"
 done
