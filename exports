@@ -1,0 +1,16 @@
+#!/bin/bash
+
+export EDITOR=/usr/bin/vim
+export HISTFILE=5000000
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignoredups
+export HISTIGNORE=" *:ls:cd:cd -:pwd:exit:date:* --help:* -h"
+
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+# Highlight section titles in manual pages
+export LESS_TERMCAP_md="${yellow}"
+
+# Don't clear the screen after quitting a manual page
+export MANPAGER="less -X"

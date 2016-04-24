@@ -29,7 +29,7 @@ echo "Linking tmux config"
 ln -s $DOTFILES_DIR/tmux.conf $HOME/.tmux.conf
 
 echo "Linking dotfiles"
-files=(aliases bash_profile exports)
+files=(aliases bash_profile exports path)
 for file in "${files[@]}"
 do
   [ -f "$HOME/.$file" ] && rm "$HOME/.$file"
