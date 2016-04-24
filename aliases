@@ -2,6 +2,8 @@
 
 alias ..="cd .."
 
+alias ap="ansible-playbook"
+
 # Git shortcuts
 alias g="git"
 alias gs="git status"
