@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export EDITOR=vim
-
 for file in ~/.{aliases,exports,functions,path,profile};
 do
   [[ -r "$file" ]] && [[ -f "$file" ]] && source "$file"
