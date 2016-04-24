@@ -3,6 +3,7 @@
 alias ..="cd .."
 
 alias ap="ansible-playbook"
+alias ans="ansible -m shell -u ubuntu -a"
 
 # Git shortcuts
 alias g="git"
